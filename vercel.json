@@ -1,0 +1,52 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/analyze.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/public/$1"
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/analyze.js"
+        }
+    ],
+    "functions": {
+        "api/analyze.js": {
+            "maxDuration": 30,
+            "memory": 1024
+        }
+    },
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                }
+            ]
+        }
+    ]
+}

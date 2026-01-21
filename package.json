@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "java-code-analyzer",
     "version": "1.0.0",
     "description": "基于DeepSeek AI的Java代码缺陷检测工具",
@@ -32,4 +33,25 @@
         "type": "git",
         "url": "https://github.com/log00104/java-code-analyzer"
     }
+=======
+  "name": "java-code-analyzer",
+  "version": "1.0.0",
+  "description": "基于DeepSeek AI的Java代码缺陷检测工具",
+  "main": "api/analyze.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "@vercel/node": "^3.0.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["java", "code-analysis", "deepseek", "ai"],
+  "author": "Your Name",
+  "license": "MIT"
+>>>>>>> fe5cc1805e8c6bbd26cde24d6a87b4d09daf74d6
 }

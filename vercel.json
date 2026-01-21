@@ -1,75 +1,19 @@
 {
-<<<<<<< HEAD
-    "version": 2,
-    "functions": {
-        "api/analyze.js": {
-            "maxDuration": 30,
-            "memory": 1024
-        }
-    },
-    "rewrites": [
-        {
-            "source": "/api/(.*)",
-            "destination": "/api/analyze.js"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/public/$1"
-        }
-    ],
-    "headers": [
-        {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                },
-                {
-                    "key": "X-Frame-Options",
-                    "value": "DENY"
-                },
-                {
-                    "key": "X-XSS-Protection",
-                    "value": "1; mode=block"
-                }
-            ]
-=======
   "version": 2,
-  "functions": {
-    "api/analyze.js": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/analyze.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/public/$1"
+      "src": "api/analyze.js",
+      "use": "@vercel/node"
     }
   ],
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
->>>>>>> fe5cc1805e8c6bbd26cde24d6a87b4d09daf74d6
-        }
-      ]
+      "src": "/api/(.*)",
+      "dest": "/api/analyze.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
     }
   ]
 }

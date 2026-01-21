@@ -5,22 +5,17 @@
     "main": "api/analyze.js",
     "scripts": {
         "dev": "vercel dev",
-        "start": "vercel dev"
+        "deploy": "vercel --prod"
     },
     "dependencies": {
-        "@vercel/node": "^3.0.0",
-        "axios": "^1.6.0"
+        "@vercel/node": "^3.0.0"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "vercel": "^28.0.0"
+    },
     "engines": {
-        "node": ">=18.0.0"
+        "node": ">=18"
     },
-    "keywords": [
-        "java",
-        "code-analysis",
-        "deepseek",
-        "ai"
-    ],
-    "author": "Your Name",
+    "author": "log00104",
     "license": "MIT"
 }

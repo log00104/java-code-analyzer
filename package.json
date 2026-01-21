@@ -9,8 +9,8 @@
         "deploy": "vercel --prod"
     },
     "dependencies": {
-        "@vercel/node": "^3.0.0",
-        "axios": "^1.6.0",
+        "@vercel/node": "^3.2.29",
+        "axios": "^1.13.2",
         "cors": "^2.8.5"
     },
     "devDependencies": {
